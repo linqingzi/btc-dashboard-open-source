@@ -68,7 +68,7 @@ async function main() {
   withoutMeeting.elements.get('lang-en').listeners.click();
   assert.equal(withoutMeeting.context.document.documentElement.lang, 'en');
   assert.equal(withoutMeeting.elements.get('lang-en').attributes['aria-pressed'], 'true');
-  assert.equal(withoutMeeting.elements.get('notice-link').attributes.href, 'README.en.md');
+  assert.equal(withoutMeeting.elements.get('notice-link').attributes.href, 'https://github.com/linqingzi/btc-dashboard-open-source/blob/main/README.en.md');
   assert.equal(withoutMeeting.elements.get('hero-title').textContent, 'Bearish (demo)');
   assert.equal(withoutMeeting.elements.get('hero-score').textContent, fixture.scoring.score.bullish_ratio.toFixed(1) + '%');
   const englishDetails = withoutMeeting.elements.get('hero').parentNode.inserted.innerHTML;

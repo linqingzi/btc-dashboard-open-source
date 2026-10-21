@@ -19,7 +19,7 @@ function setLanguage(language){
   document.title=uiText('BTC Dashboard · 合成数据演示');
   Object.keys(staticLabels).forEach(function(id){var element=$(id);if(element)element.textContent=uiText(staticLabels[id])});
   ['zh','en'].forEach(function(lang){var button=$('lang-'+lang);if(button)button.setAttribute('aria-pressed',String(lang===uiLanguage))});
-  if($('notice-link'))$('notice-link').setAttribute('href',uiLanguage==='en'?'README.en.md':'README.md');
+  if($('notice-link'))$('notice-link').setAttribute('href','https://github.com/linqingzi/btc-dashboard-open-source/blob/main/'+(uiLanguage==='en'?'README.en.md':'README.md'));
   if(latestPayload)render(latestPayload);
   else if(loadFailure){txt('hero-title','数据加载失败');txt('hero-sub',loadFailure)}
 }

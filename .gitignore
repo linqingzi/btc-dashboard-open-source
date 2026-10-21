@@ -11,3 +11,4 @@ venv/
 data/cache/
 node_modules/
 coverage/
+build/
