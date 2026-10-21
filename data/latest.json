@@ -1,0 +1,440 @@
+{
+  "macro": {
+    "avg_funding_rate_pct": 0.002,
+    "binance_basis_pct_annual": 8.0,
+    "binance_funding_rate_pct": 0.003,
+    "btc_gold_ratio": 5.0,
+    "bybit_funding_rate_pct": 0.001,
+    "bybit_oi_usd_bn": 2.0,
+    "copper": {
+      "change_pct": -0.5,
+      "price": 3.0
+    },
+    "cpi_yoy_pct": 3.0,
+    "derivatives": {
+      "avg_funding_rate_pct": 0.002,
+      "oi_change_24h": 0.5
+    },
+    "dxy": 100.0,
+    "etf": {
+      "arkb": {
+        "change_pct": 0.25,
+        "price": 40.0
+      },
+      "bitb": {
+        "change_pct": 0.25,
+        "price": 50.0
+      },
+      "fbtc": {
+        "change_pct": 0.25,
+        "price": 20.0
+      },
+      "gbtc": {
+        "change_pct": 0.25,
+        "price": 30.0
+      },
+      "ibit": {
+        "change_pct": 0.25,
+        "price": 10.0
+      }
+    },
+    "fed_assets_trillions": 7.0,
+    "fed_funds_rate": 4.0,
+    "fomc": {},
+    "gold_usd": 2000.0,
+    "m2_yoy_pct": 2.5,
+    "oil": {
+      "change_pct": 0.25,
+      "price": 90.0
+    },
+    "real_yield_10y": 2.0,
+    "rrp_billions": 250.0,
+    "spx": {
+      "change_pct": 0.5,
+      "price": 3000.0
+    },
+    "stablecoin_total_mcap": 170000000000.0,
+    "stablecoin_total_vol": 30000000000.0,
+    "total_oi_usd_bn": 6.0,
+    "usdc_mcap": 40000000000.0,
+    "usdt_mcap": 130000000000.0,
+    "vix": {
+      "change_pct": 0.5,
+      "price": 22.0
+    },
+    "yield_10y": 4.0
+  },
+  "market": {
+    "btc_dominance_pct": 50.0,
+    "volume_24h_usd": 20000000000.0
+  },
+  "meta": {
+    "description": "Fictional development fixture; not observed market data.",
+    "generator": "scripts/generate_demo.py:v1",
+    "synthetic": true,
+    "updated_at": "2000-01-01T00:00:00+00:00",
+    "updated_ts": 946684800
+  },
+  "onchain": {
+    "bc_avg_fee_btc": 0.01,
+    "bc_avg_fee_usd": 2.0,
+    "bc_miners_revenue": 15000000.0,
+    "bc_tx_volume_usd": 4000000000.0,
+    "bc_utxo_count": 90000000,
+    "bc_wallet_users": 70000000,
+    "block_height": 500000,
+    "cm_active_addresses": 500000,
+    "cm_roi_1yr": 10.0,
+    "cm_roi_30d": 5.0,
+    "cm_tx_count": 400000,
+    "difficulty": 42000000000000.0,
+    "hashrate_1w_avg_eh_s": 500.0,
+    "mvrv": 1.7,
+    "nupl": 0.4,
+    "realized_price_usd": 7500.0
+  },
+  "price": {
+    "change_24h_pct": 2.5,
+    "usd": 10000.0
+  },
+  "scoring": {
+    "divergence_alerts": [],
+    "indicators": [
+      {
+        "combined_score": 0.002,
+        "confidence": 1.0,
+        "continuous_score": 0.0,
+        "interpretation": "Fed资产平稳",
+        "name": "fed_assets_trillions",
+        "signal": "neutral",
+        "source": "FRED WALCL",
+        "tier": "critical",
+        "trend_score": 0.007,
+        "value": 7.0,
+        "weight": 2.56
+      },
+      {
+        "combined_score": 0.012,
+        "confidence": 1.0,
+        "continuous_score": 0.0,
+        "interpretation": "M2温和增长",
+        "name": "m2_yoy_pct",
+        "signal": "neutral",
+        "source": "FRED M2SL",
+        "tier": "critical",
+        "trend_score": 0.04,
+        "value": 2.5,
+        "weight": 3.1
+      },
+      {
+        "combined_score": -0.694,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "RRP高位积累 → 资金沉淀隔夜逆回购",
+        "name": "rrp_billions",
+        "signal": "bearish",
+        "source": "FRED RRPONTSYD",
+        "tier": "critical",
+        "trend_score": 0.02,
+        "value": 250.0,
+        "weight": 4.2
+      },
+      {
+        "combined_score": -0.698,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "美元指数走强 → 金融条件紧缩",
+        "name": "dxy",
+        "signal": "bearish",
+        "source": "Frankfurter.dev (ICE加权)",
+        "tier": "major",
+        "trend_score": 0.005,
+        "value": 100.0,
+        "weight": 1.76
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "实际利率上行 → 金融条件紧缩",
+        "name": "real_yield_10y",
+        "signal": "bearish",
+        "source": "FRED DFII10",
+        "tier": "major",
+        "trend_score": 0.0,
+        "value": 2.0,
+        "weight": 2.0
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "通胀粘性 → 维持高利率",
+        "name": "cpi_yoy_pct",
+        "signal": "bearish",
+        "source": "FRED CPIAUCSL",
+        "tier": "major",
+        "trend_score": 0.0,
+        "value": 3.0,
+        "weight": 2.7
+      },
+      {
+        "combined_score": 0.07,
+        "confidence": 1.0,
+        "continuous_score": 0.1,
+        "interpretation": "情绪中性",
+        "name": "fear_greed",
+        "signal": "neutral",
+        "source": "Alternative.me",
+        "tier": "major",
+        "trend_score": 0.0,
+        "value": 45,
+        "weight": 3.15
+      },
+      {
+        "combined_score": 0.35,
+        "confidence": 0.7,
+        "continuous_score": 0.5,
+        "interpretation": "ETF资金净流入 → 机构持续买入",
+        "name": "etf_net_flow_pct",
+        "signal": "bullish",
+        "source": "Finnhub (IBIT/FBTC/GBTC/ARKB/BITB等)",
+        "tier": "major",
+        "trend_score": 0.0,
+        "value": {
+          "arkb": {
+            "change_pct": 0.25,
+            "price": 40.0
+          },
+          "bitb": {
+            "change_pct": 0.25,
+            "price": 50.0
+          },
+          "fbtc": {
+            "change_pct": 0.25,
+            "price": 20.0
+          },
+          "gbtc": {
+            "change_pct": 0.25,
+            "price": 30.0
+          },
+          "ibit": {
+            "change_pct": 0.25,
+            "price": 10.0
+          }
+        },
+        "weight": 2.3
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "VIX高位 → 恐慌/不确定性",
+        "name": "vix",
+        "signal": "bearish",
+        "source": "Yahoo Finance ^VIX",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 22.0,
+        "weight": 1.5
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "油价高 → 成本推动通胀",
+        "name": "oil_usd",
+        "signal": "bearish",
+        "source": "Yahoo Finance CL=F",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 90.0,
+        "weight": 1.2
+      },
+      {
+        "combined_score": 0.002,
+        "confidence": 1.0,
+        "continuous_score": 0.0,
+        "interpretation": "算力稳定增长",
+        "name": "hashrate_eh_s",
+        "signal": "neutral",
+        "source": "Blockchain.com",
+        "tier": "minor",
+        "trend_score": 0.005,
+        "value": 500.0,
+        "weight": 1.8
+      },
+      {
+        "combined_score": 0.002,
+        "confidence": 1.0,
+        "continuous_score": 0.0,
+        "interpretation": "主导率稳定",
+        "name": "btc_dominance_pct",
+        "signal": "neutral",
+        "source": "CoinGecko Global",
+        "tier": "minor",
+        "trend_score": 0.005,
+        "value": 50.0,
+        "weight": 1.1
+      },
+      {
+        "combined_score": 0.731,
+        "confidence": 1.0,
+        "continuous_score": 1.0,
+        "interpretation": "30天正收益 → 动量向上",
+        "name": "roi_30d",
+        "signal": "bullish",
+        "source": "CoinMetrics",
+        "tier": "minor",
+        "trend_score": 0.102,
+        "value": 5.0,
+        "weight": 1.5
+      },
+      {
+        "combined_score": -0.233,
+        "confidence": 1.0,
+        "continuous_score": -0.333,
+        "interpretation": "USDT收缩 → 稳定币资金外流",
+        "name": "usdt_mcap",
+        "signal": "bearish",
+        "source": "DeFiLlama/CoinGecko",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 130000000000.0,
+        "weight": 1.1
+      },
+      {
+        "combined_score": 0.14,
+        "confidence": 1.0,
+        "continuous_score": 0.2,
+        "interpretation": "资金费率中性",
+        "name": "funding_rate_avg",
+        "signal": "neutral",
+        "source": "Binance/Bybit/OKX",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 0.002,
+        "weight": 1.0
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "基差年化高 → 期货溢价/杠杆过热",
+        "name": "basis_annualized",
+        "signal": "bearish",
+        "source": "Binance/Bybit",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 8.0,
+        "weight": 1.0
+      },
+      {
+        "combined_score": 0.7,
+        "confidence": 1.0,
+        "continuous_score": 1.0,
+        "interpretation": "OI增加 → 新增仓位/趋势延续",
+        "name": "oi_change_24h",
+        "signal": "bullish",
+        "source": "Binance/Bybit/OKX",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 6.0,
+        "weight": 0.9
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "MVRV>3.5 → 未实现盈利丰厚/顶部区域",
+        "name": "mvrv",
+        "signal": "bearish",
+        "source": "Glassnode/CoinMetrics",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 1.7,
+        "weight": 1.3
+      },
+      {
+        "combined_score": -0.7,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "NUPL高位 → 获利盘丰厚抛压大",
+        "name": "nupl",
+        "signal": "bearish",
+        "source": "Glassnode",
+        "tier": "minor",
+        "trend_score": 0.0,
+        "value": 0.4,
+        "weight": 1.2
+      },
+      {
+        "combined_score": -0.685,
+        "confidence": 1.0,
+        "continuous_score": -1.0,
+        "interpretation": "价格/实现价>2 → 获利回吐压力大",
+        "name": "realized_price_ratio",
+        "signal": "bearish",
+        "source": "Glassnode/CoinMetrics",
+        "tier": "minor",
+        "trend_score": 0.051,
+        "value": 10.0,
+        "weight": 1.32
+      }
+    ],
+    "score": {
+      "bullish_ratio": 12.8,
+      "confidence": 0.98,
+      "verdict": "做空",
+      "verdict_color": "#ff3d3d",
+      "verdict_icon": "🔴",
+      "weighted_score": -27.2
+    },
+    "tiers": {
+      "critical": {
+        "avg_score": -0.291,
+        "bearish": 4.2,
+        "bullish": 0,
+        "neutral": 5.7,
+        "total": 9.9
+      },
+      "major": {
+        "avg_score": -0.293,
+        "bearish": 6.5,
+        "bullish": 2.3,
+        "neutral": 3.1,
+        "total": 11.9
+      },
+      "minor": {
+        "avg_score": -0.243,
+        "bearish": 8.6,
+        "bullish": 2.4,
+        "neutral": 3.9,
+        "total": 14.9
+      }
+    }
+  },
+  "sentiment": {
+    "current": {
+      "classification": "合成中性",
+      "value": 45
+    },
+    "news": {
+      "net_sentiment": 0,
+      "source": "合成示例"
+    },
+    "reddit": {
+      "net_sentiment": 0,
+      "source": "合成示例"
+    }
+  },
+  "status": {
+    "healthy": true,
+    "quality": "synthetic"
+  },
+  "supply": {
+    "annual_inflation_rate_pct": 1.0,
+    "daily_issuance_btc": 450.0,
+    "percent_mined": 80.0
+  }
+}
