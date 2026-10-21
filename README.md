@@ -8,9 +8,17 @@ An offline Bitcoin fundamentals demo: 20 indicators, 3 scoring tiers, and reprod
 
 这是演示工具，不提供实时行情、盈利信号或投资建议。数值、日期及页面中的多空结论均来自虚构示例；“置信度”不代表预测准确率。
 
-![真实英文看板截图，顶部同时保留中文与英文的合成演示警示](docs/images/dashboard-demo.jpg)
+**中文界面 / Chinese UI**
 
-*由本机浏览器直接截取，未使用 AI 生图；输入均为仓库自带的固定合成示例，无真实行情或账户数据。[查看中文画面](docs/images/dashboard-demo-zh.jpg)。*
+![中文默认模式的真实合成数据看板](docs/images/dashboard-demo-zh.jpg)
+
+**English UI / 英文界面**
+
+![English 模式的真实看板：英文指标、解读、层级和状态](docs/images/dashboard-demo-en.jpg)
+
+[查看完整英文界面 / Open the full English dashboard](docs/images/dashboard-demo-en-full.jpg) · [English instructions](README.en.md)
+
+*图片由本机浏览器直接截取，未使用 AI 生图；英文全页图包含全部 20 个指标、解读及 51 张资料卡。仅顶部的合成演示提示和语言按钮保留双语。输入均为仓库固定合成示例，无真实行情、账户或个人路径。*
 
 可以看到连续评分、趋势因子、Critical / Major / Minor 三层权重，以及宏观、情绪、衍生品、链上和供应卡片。规则与限制见下文及 [数据政策](DATA_POLICY.md)。
 

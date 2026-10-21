@@ -8,9 +8,13 @@ Python standard library + vanilla HTML/CSS/JavaScript. No API keys or package in
 
 This demonstration provides no live market data, profit signals, or investment advice. Values, dates, and bullish/bearish labels come from fictional examples. “Data coverage” is not prediction accuracy.
 
-![Actual English dashboard, with a clearly readable bilingual synthetic-demo warning](docs/images/dashboard-demo.jpg)
+**English UI — actual full-page screenshot**
 
-*Captured directly from the running local browser, without AI-generated imagery. Inputs are the repository's synthetic fixtures, with no real market or account data. [Chinese screenshot](docs/images/dashboard-demo-zh.jpg).*
+![Complete dashboard in English mode: all 20 indicators, interpretations, tiers, states and 51 data cards](docs/images/dashboard-demo-en-full.jpg)
+
+*Captured directly from the running local browser after clicking **English**, without AI-generated imagery. All indicator names, interpretations, tiers, states, and data cards are in English. Only the synthetic-demo notice and language buttons retain both languages. Inputs are the repository's synthetic fixtures, with no real market data, account data, or personal paths.*
+
+[English overview](docs/images/dashboard-demo-en.jpg) · [Chinese screenshot](docs/images/dashboard-demo-zh.jpg) · [中文说明](README.md)
 
 The dashboard presents continuous scores, trend factors, Critical / Major / Minor tiers, and macro, sentiment, derivatives, on-chain, and supply cards. The original scoring rules and weights are preserved.
 
