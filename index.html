@@ -138,6 +138,43 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   .indicators-table th,.indicators-table td{padding:4px 6px}
 }
 .demo-notice{margin:0 auto 20px;padding:14px 18px;border:1px solid var(--gold);border-radius:var(--radius);color:var(--gold);background:var(--bg-panel);font-size:.85rem;line-height:1.7}.demo-notice strong{display:block;font-size:1rem}.demo-notice a{color:inherit}
+/* Language controls and layouts keep both notice languages readable. */
+.header{height:auto;min-height:64px;padding:10px 24px}
+.header-inner{flex-wrap:wrap;gap:10px}
+.header-time{margin-left:0;font-size:.72rem}
+.language-switch{display:flex;gap:4px;margin-left:auto}
+.language-switch button{min-width:68px;min-height:36px;padding:6px 12px;border:1px solid var(--border-light);border-radius:6px;background:var(--bg-card);color:var(--text);font:inherit;font-size:.8rem;cursor:pointer}
+.language-switch button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);background:#30280c}
+.language-switch button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.demo-notice p{font-size:.9rem;line-height:1.65;margin-top:5px;overflow-wrap:break-word}
+.demo-notice a{font-size:.8rem}
+.hero{flex-wrap:wrap;gap:16px}
+.hero-left{min-width:0;flex:1 1 260px}
+.hero-subtitle{font-size:.78rem;line-height:1.7}
+.hero-label{font-size:.75rem}
+.score-detail .score-detail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0;margin:0;border:0;background:transparent;animation:none}
+.score-row{display:flex;flex-direction:column;gap:6px;border:0;font-size:.88rem}
+.tier-breakdown{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tier-item{margin-bottom:0}
+.tier-label{font-size:.73rem;line-height:1.5}
+.tier-stats{font-size:.72rem;line-height:1.7;color:var(--text-dim);overflow-wrap:break-word}
+.card-name{font-size:.75rem;line-height:1.5}
+.card-note{font-size:.7rem;line-height:1.5;color:var(--text-dim)}
+.card-src{font-size:.6rem}
+.card-top{gap:8px}
+.card-body{flex-wrap:wrap}
+.indicators-table table{min-width:1000px}
+.indicators-table th,.indicators-table td{font-size:.72rem;line-height:1.5}
+.footer{font-size:.72rem;gap:12px;flex-wrap:wrap}
+@media(max-width:640px){
+  .header{padding:10px 14px}.header-inner{gap:8px}.header-label{font-size:.65rem}
+  .header-time{flex-basis:100%;order:2}.language-switch{margin-left:auto}
+  .main{padding:14px}.demo-notice{padding:12px 14px}.demo-notice strong{font-size:1rem}
+  .hero{padding:18px}.hero-title{font-size:1.15rem}.hero-score{font-size:2rem}
+  .score-detail{padding:16px}.score-detail .score-detail{gap:8px}.score-row{font-size:.75rem}
+  .tier-breakdown{grid-template-columns:1fr}.tier-stats{font-size:.8rem}
+  .card-src{white-space:normal}.card-value{font-size:1.15rem}
+}
 </style>
 </head>
 <body>
@@ -153,14 +190,19 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
     <span class="header-label">VIX</span><span id="h-vix" class="header-val">--</span>
     <span class="header-label">F&G</span><span id="h-fng" class="header-val">--</span>
     <span id="h-time" class="header-time">--</span>
+    <nav class="language-switch" aria-label="语言 / Language">
+      <button type="button" id="lang-zh" lang="zh-CN" aria-pressed="true">中文</button>
+      <button type="button" id="lang-en" lang="en" aria-pressed="false">English</button>
+    </nav>
   </div>
 </header>
 
 <main class="main">
-  <aside class="demo-notice" aria-label="合成数据说明">
-    <strong>合成数据演示 · SYNTHETIC DEMO</strong>
-    所有数值与日期均由本地脚本虚构，不代表真实行情、新闻或会议日程。评分仅演示原有规则，不构成投资建议。
-    <a href="README.md">运行与数据说明</a>
+  <aside class="demo-notice" aria-label="合成数据说明 / Synthetic data notice">
+    <strong>BTC Dashboard · 合成演示 / Synthetic demo</strong>
+    <p lang="zh-CN">20 个指标 · 3 层规则评分 · 离线合成数据。非实时行情或盈利信号，不构成投资建议。</p>
+    <p lang="en">20 indicators · 3 scoring tiers · Offline synthetic data. No live data or profit signals. Not investment advice.</p>
+    <a id="notice-link" href="README.md">运行与数据说明</a>
   </aside>
 
   <!-- Hero -->
@@ -174,7 +216,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
     </div>
     <div class="hero-right">
       <div class="hero-score" id="hero-score">--</div>
-      <div class="hero-label">综合评分</div>
+      <div id="hero-label" class="hero-label">综合评分</div>
     </div>
   </div>
 
@@ -182,7 +224,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">🌐</span>
-      <span class="section-title">宏观流动性</span>
+      <span id="section-macro" class="section-title">宏观流动性</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-macro"></div>
@@ -192,7 +234,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">📈</span>
-      <span class="section-title">ETF 资金流</span>
+      <span id="section-etf" class="section-title">ETF 资金流</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-etf"></div>
@@ -202,7 +244,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">🏦</span>
-      <span class="section-title">机构资金</span>
+      <span id="section-inst" class="section-title">机构资金</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-inst"></div>
@@ -212,7 +254,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">😰</span>
-      <span class="section-title">市场情绪</span>
+      <span id="section-sentiment" class="section-title">市场情绪</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-sentiment"></div>
@@ -222,7 +264,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">💵</span>
-      <span class="section-title">稳定币流动性</span>
+      <span id="section-stable" class="section-title">稳定币流动性</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-stable"></div>
@@ -232,7 +274,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">⚡</span>
-      <span class="section-title">衍生品指标</span>
+      <span id="section-deriv" class="section-title">衍生品指标</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-deriv"></div>
@@ -242,7 +284,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">🔗</span>
-      <span class="section-title">链上数据</span>
+      <span id="section-onchain" class="section-title">链上数据</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-onchain"></div>
@@ -252,7 +294,7 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
   <div class="section">
     <div class="section-header">
       <span class="section-icon">⛏</span>
-      <span class="section-title">供应 & 矿工</span>
+      <span id="section-supply" class="section-title">供应 & 矿工</span>
       <span class="section-line"></span>
     </div>
     <div class="grid" id="grid-supply"></div>
@@ -261,10 +303,11 @@ body{background:var(--bg-body);color:var(--text);font-family:var(--font);line-he
 </main>
 
 <footer class="footer">
-  <span>本地合成数据 · 无外部数据下载</span>
-  <span>MIT · 仅供开发与演示</span>
+  <span id="footer-data">本地合成数据 · 无外部数据下载</span>
+  <span id="footer-license">MIT · 仅供开发与演示</span>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

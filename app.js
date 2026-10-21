@@ -2,8 +2,29 @@
  * BTC Dashboard v7 — Terminal-Grade Design
  */
 var syntheticDemo = false;
+var uiLanguage = 'zh';
+var latestPayload = null;
+var loadFailure = null;
+function uiText(value){return DashboardI18n.translate(value,uiLanguage)}
+var staticLabels = {
+  'hero-label':'综合评分','section-macro':'宏观流动性','section-etf':'ETF 资金流',
+  'section-inst':'机构资金','section-sentiment':'市场情绪','section-stable':'稳定币流动性',
+  'section-deriv':'衍生品指标','section-onchain':'链上数据','section-supply':'供应 & 矿工',
+  'notice-link':'运行与数据说明','footer-data':'本地合成数据 · 无外部数据下载','footer-license':'MIT · 仅供开发与演示',
+  'hero-title':'加载中...'
+};
+function setLanguage(language){
+  uiLanguage=language==='en'?'en':'zh';
+  document.documentElement.lang=uiLanguage==='en'?'en':'zh-CN';
+  document.title=uiText('BTC Dashboard · 合成数据演示');
+  Object.keys(staticLabels).forEach(function(id){var element=$(id);if(element)element.textContent=uiText(staticLabels[id])});
+  ['zh','en'].forEach(function(lang){var button=$('lang-'+lang);if(button)button.setAttribute('aria-pressed',String(lang===uiLanguage))});
+  if($('notice-link'))$('notice-link').setAttribute('href',uiLanguage==='en'?'README.en.md':'README.md');
+  if(latestPayload)render(latestPayload);
+  else if(loadFailure){txt('hero-title','数据加载失败');txt('hero-sub',loadFailure)}
+}
 function $(id){return document.getElementById(id)}
-function txt(id,t,c){var el=$(id);if(el){el.textContent=t||'--';if(c)el.className=c}}
+function txt(id,t,c){var el=$(id);if(el){el.textContent=uiText(t)||'--';if(c)el.className=c}}
 function css(id,p,v){var el=$(id);if(el)el.style[p]=v}
 
 var F={usd:function(n){if(n==null)return'--';if(Math.abs(n)>=1e12)return'$'+(n/1e12).toFixed(2)+'T';if(Math.abs(n)>=1e9)return'$'+(n/1e9).toFixed(2)+'B';return'$'+n.toLocaleString('en-US',{maximumFractionDigits:0})},pct:function(n){if(n==null)return'--';return(n>=0?'+':'')+n.toFixed(2)+'%'},num:function(n){if(n==null)return'--';return n.toLocaleString('en-US',{maximumFractionDigits:0})}}
@@ -27,13 +48,13 @@ function card(name,value,trend,bull,bear,unit,src,note){
   var valHtml=value!=null?unit(value):'—';
   var noteHtml=note?note(value):'';
   
-  return '<div class=\"'+cls+'\">'+
+  return uiText('<div class=\"'+cls+'\">'+
     '<div class=\"card-top\"><span class=\"card-name\">'+name+'</span>'+
     (src?'<span class=\"card-src\">'+src+'</span>':'')+
     '</div>'+
     '<div class=\"card-body\"><span class=\"card-value\">'+valHtml+'</span>'+trendHtml+'</div>'+
     (noteHtml?'<div class=\"card-note\">'+noteHtml+'</div>':'')+
-  '</div>';
+  '</div>');
 }
 
 function render(d){
@@ -51,7 +72,7 @@ function render(d){
   txt('h-spx',rk.spx&&rk.spx.price?F.num(rk.spx.price):'--');
   txt('h-vix',rk.vix&&rk.vix.price?rk.vix.price.toFixed(1):'--');
   txt('h-fng',fng!=null?fng+(fng<=25?' 极恐':fng>=75?' 极贪':''):'--');
-  txt('h-time','示例日期 '+(new Date((d.meta||{}).updated_at||Date.now())).toLocaleString('zh-CN',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}));
+  txt('h-time','示例日期 '+(new Date((d.meta||{}).updated_at||Date.now())).toLocaleString(uiLanguage==='en'?'en-US':'zh-CN',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}));
 
   // ═══ Macro Cards ═══
   var mcCards=[];
@@ -153,7 +174,7 @@ function render(d){
   } else {
     etfCards.unshift('<div class=\"card miss\"><div class=\"card-top\"><span class=\"card-name\">ETF 综合</span></div><div class=\"card-body\"><span class=\"card-value\">等待中</span></div><div class=\"card-note\">合成示例未提供此字段</div></div>');
   }
-  $('grid-etf').innerHTML=etfCards.join('');
+  $('grid-etf').innerHTML=uiText(etfCards.join(''));
   var inCards=[];
   inCards.push(card('24h 交易量',m.volume_24h_usd||mc.volume_24h_usd,null,function(v){return v>30e9},null,function(v){return F.usd(v)},'CoinGecko'));
   inCards.push(card('BTC 占比',m.btc_dominance_pct,null,function(v){return v>55},function(v){return v<45},function(v){return(v||0).toFixed(1)+'%'},'',function(v){return v>55?'BTC 主导':v<45?'山寨季':''}));
@@ -294,20 +315,22 @@ function render(d){
     indicators.forEach(function(ind) {
       var sigClass = ind.signal === 'bullish' ? 'bull' : ind.signal === 'bearish' ? 'bear' : '';
       scoreDetailHtml += '<tr>';
-      scoreDetailHtml += '<td>' + ind.name + '</td>';
+      scoreDetailHtml += '<td>' + DashboardI18n.indicator(ind.name,uiLanguage) + '</td>';
       scoreDetailHtml += '<td>' + indicatorValue(ind.value) + '</td>';
-      scoreDetailHtml += '<td class="' + sigClass + '">' + (ind.signal || '—') + '</td>';
+      scoreDetailHtml += '<td class="' + sigClass + '">' + ({bullish:'看多',bearish:'看空',neutral:'中性'}[ind.signal] || ind.signal || '—') + '</td>';
       scoreDetailHtml += '<td>' + (ind.continuous_score != null ? ind.continuous_score.toFixed(3) : '—') + '</td>';
       scoreDetailHtml += '<td>' + (ind.trend_score != null ? ind.trend_score.toFixed(3) : '—') + '</td>';
       scoreDetailHtml += '<td>' + (ind.combined_score != null ? ind.combined_score.toFixed(3) : '—') + '</td>';
       scoreDetailHtml += '<td>' + ind.weight + '</td>';
-      scoreDetailHtml += '<td>' + ind.tier + '</td>';
+      scoreDetailHtml += '<td>' + ({critical:'核心',major:'主要',minor:'次要'}[ind.tier] || ind.tier) + '</td>';
       scoreDetailHtml += '<td>' + (syntheticDemo ? '合成示例' : ind.source) + '</td>';
       scoreDetailHtml += '<td>' + (ind.interpretation || '') + '</td>';
       scoreDetailHtml += '</tr>';
     });
     scoreDetailHtml += '</tbody></table></div>';
   }
+
+  scoreDetailHtml = uiText(scoreDetailHtml);
 
   // 插入到 hero 后面或专门区域
   var heroEl = $('hero');
@@ -323,5 +346,8 @@ function render(d){
 
 // end of render function
 
-async function init(){try{var d=await load();render(d)}catch(e){txt('hero-title','数据加载失败');txt('hero-sub',e.message)}}
+async function init(){try{latestPayload=await load();render(latestPayload)}catch(e){loadFailure=e.message;txt('hero-title','数据加载失败');txt('hero-sub',loadFailure)}}
+$('lang-zh').addEventListener('click',function(){setLanguage('zh')});
+$('lang-en').addEventListener('click',function(){setLanguage('en')});
+setLanguage('zh');
 init();
