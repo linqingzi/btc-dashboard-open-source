@@ -2,6 +2,10 @@
 
 [中文](README.md) · [English](README.en.md)
 
+**[Try the demo — no installation](https://linqingzi.github.io/btc-dashboard-open-source/)** · No download, Python, account, or API key needed. Open the page to explore 20 indicators and three scoring tiers, then click **English** in the top-right corner. Works on desktop and mobile.
+
+The initial page load needs internet access. Its fixed synthetic data was generated offline; the browser only reads this site's synthetic JSON. There is no live market feed, trading, data upload, or automatic market-data refresh. For code changes or local offline use, follow the [advanced local path](#run-locally-in-three-minutes).
+
 **Explore how 20 Bitcoin fundamentals inputs feed a three-tier rule-based score on your own computer.** All inputs are reproducible synthetic fixtures, suitable for reading the scoring code, understanding the schema, and experimenting with the interface.
 
 Python standard library + vanilla HTML/CSS/JavaScript. No API keys or package installation required.
@@ -19,6 +23,8 @@ This demonstration provides no live market data, profit signals, or investment a
 The dashboard presents continuous scores, trend factors, Critical / Major / Minor tiers, and macro, sentiment, derivatives, on-chain, and supply cards. The original scoring rules and weights are preserved.
 
 ## Run locally in three minutes
+
+Use the demo link above to try the interface immediately. The local path below is for reading or modifying code, regenerating examples, or running locally offline.
 
 Python 3.9 or newer is required. Fixtures are included, so starting the demo does not contact data providers.
 
@@ -69,6 +75,7 @@ app.js                      Local fixture rendering and display-only language sw
 i18n.js                     Chinese / English display translations
 scripts/scoring.py          Original scoring rules and weights
 scripts/generate_demo.py    Deterministic synthetic fixture generator
+scripts/build_static_demo.py Package only verified synthetic data and the frontend
 data/latest.json            Synthetic snapshot and score output
 data/history.json           Eight synthetic history points
 tests/                      Offline regression and frontend checks
@@ -84,9 +91,22 @@ Coverage is the original rule's weighted data availability, not forecast accurac
 
 This is an independent public release with new Git history. The owner authorized publishing the original code and scoring rules under MIT. Private history, real market snapshots, personal paths, credentials, collectors, and deployment configuration were excluded.
 
-There are no scheduled collectors, automatic commits, publishing, trade execution, or deployment workflows, and no hosted live demo. The address above is a local preview only.
+There are no market-data collectors, scheduled refreshes, automatic data commits, or trade-execution workflows. The no-install entry uses this public repository's GitHub Pages to host the reviewed, fixed synthetic demo. The localhost address is for local preview.
 
 MIT covers this repository's original code, documentation, and generated synthetic examples. It grants no rights to third-party market data. Any real-data integration must be implemented separately after obtaining required rights and complying with provider terms, including attribution and redistribution restrictions. The default page rejects inputs not marked as synthetic; never relabel real data as synthetic. See [data and third-party policy](DATA_POLICY.md).
+
+## Maintaining the static demo
+
+The hosted demo publishes from the root of `gh-pages`. Its six files contain only the frontend, fixed `data/latest.json`, MIT `LICENSE`, and an empty `.nojekyll`. Python, historical data, and repository documents are excluded. There is no backend, credential, third-party script, or data-upload service.
+
+Maintainers can create and inspect the same static bundle locally:
+
+```sh
+python3 scripts/build_static_demo.py --output build/demo
+python3 -m http.server 8081 --bind 127.0.0.1 --directory build/demo
+```
+
+Packaging first verifies the fixed fixtures byte for byte. Modified market values are rejected even if still marked synthetic. Changes to `main` do not automatically update the hosted snapshot: review the bundle before updating `gh-pages`. GitHub Pages builds and publishes static files without collecting or regenerating market data.
 
 ## Feedback and contributions
 

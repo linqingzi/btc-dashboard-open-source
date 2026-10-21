@@ -2,6 +2,10 @@
 
 [中文](README.md) · [English](README.en.md)
 
+**[免安装试用 / Try demo](https://linqingzi.github.io/btc-dashboard-open-source/)** · 无需下载、Python、账号或 API 密钥。打开后即可查看 20 个指标及 3 层评分，点击右上角 **English** 切换英文；手机和桌面均可使用。
+
+网页首次加载需要联网，数据由离线脚本生成并固定不变；浏览器只读取本站的合成 JSON。没有实时行情、交易执行、数据上传或行情自动更新。想修改代码或在本机离线运行，再看[本地进阶用法](#3-分钟本机上手)。
+
 **在本机探索 20 个 BTC 基本面指标如何组成 3 层规则评分。** 所有输入均为可重现的合成数据，适合阅读评分代码、理解字段结构和试改界面。
 
 An offline Bitcoin fundamentals demo: 20 indicators, 3 scoring tiers, and reproducible synthetic fixtures. Python standard library + vanilla JavaScript; no API keys or package installation required.
@@ -23,6 +27,8 @@ An offline Bitcoin fundamentals demo: 20 indicators, 3 scoring tiers, and reprod
 可以看到连续评分、趋势因子、Critical / Major / Minor 三层权重，以及宏观、情绪、衍生品、链上和供应卡片。规则与限制见下文及 [数据政策](DATA_POLICY.md)。
 
 ## 3 分钟本机上手
+
+只想体验界面可直接使用上面的免安装演示。以下路径适合阅读、修改代码、重新生成示例或在本机离线运行。
 
 需要 Python 3.9 或更新版本。演示文件已随仓库提供，启动不需要访问数据供应商。
 
@@ -73,6 +79,7 @@ app.js                      本地示例渲染与仅用于显示的语言切换
 i18n.js                     仅用于显示的中英文翻译
 scripts/scoring.py          原有评分规则与权重
 scripts/generate_demo.py    确定性的合成数据生成器
+scripts/build_static_demo.py 仅打包已验证合成数据的静态演示
 data/latest.json            合成快照与评分输出
 data/history.json           8 个合成历史点
 tests/                      离线回归与前端渲染检查
@@ -88,9 +95,22 @@ LICENSE                     MIT
 
 这是一个使用全新 Git 历史的独立公开版本。仓库所有者已授权公开自有代码及评分规则，并采用 MIT。旧私有仓库、真实行情快照、旧提交、个人本机路径、密钥、采集器和部署配置均未纳入此版本。
 
-本版本不包含定时采集、自动提交、自动发布、交易执行或部署工作流。也没有托管的在线演示；上面的地址仅指本机预览。
+本版本没有行情采集、定时更新、自动数据提交或交易执行工作流。免安装入口使用同一公开仓库的 GitHub Pages，只托管已核对的固定合成演示；本机地址用于本地预览。
 
 MIT 适用于本仓库自有代码、文档及生成的合成示例，不会授予任何第三方行情数据的使用或再分发权。实际数据接入须由使用者自行实现，并预先取得供应商要求的权限、遵守其条款；默认页面会拒绝未标记为合成的数据。详见 [数据政策](DATA_POLICY.md)。不要将真实行情改标为合成数据。
+
+## 静态演示维护
+
+托管入口从 `gh-pages` 分支的根目录发布，只含前端、固定 `data/latest.json`、MIT `LICENSE` 和空的 `.nojekyll`，共 6 个文件。Python、历史数据及仓库文档不在托管包内。没有后端、凭证、第三方脚本或数据上传服务。
+
+维护者可在本机生成并检查同等发布包：
+
+```sh
+python3 scripts/build_static_demo.py --output build/demo
+python3 -m http.server 8081 --bind 127.0.0.1 --directory build/demo
+```
+
+打包会先逐字节验证固定示例；即使保留合成标记，修改过的行情数值也会被拒绝。`main` 的改动不会自动更新演示，维护者应审查发布包后再更新 `gh-pages`；GitHub Pages 执行静态建置与发布，不采集或重新生成行情。
 
 ## 反馈与贡献
 
