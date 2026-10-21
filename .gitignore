@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+.env
+.env.*
+*.local
+*.pem
+*.key
+data/cache/
+node_modules/
+coverage/

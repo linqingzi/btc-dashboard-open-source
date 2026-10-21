@@ -1,0 +1,986 @@
+[
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.3,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.18,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.18,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.18,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.18,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.18,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.93,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.36,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 243.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.65,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T17:00:00+00:00",
+      "updated_ts": 946659600
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499993,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.3,
+      "cm_roi_30d": 4.3,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 496.5,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9825.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.4,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.19,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.19,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.19,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.19,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.19,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.94,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.38,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 244.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.7,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T18:00:00+00:00",
+      "updated_ts": 946663200
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499994,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.4,
+      "cm_roi_30d": 4.4,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 497.0,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9850.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.5,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.2,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.2,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.2,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.2,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.2,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.95,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.4,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 245.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.75,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T19:00:00+00:00",
+      "updated_ts": 946666800
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499995,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.5,
+      "cm_roi_30d": 4.5,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 497.5,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9875.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.6,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.21,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.21,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.21,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.21,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.21,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.96,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.42,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 246.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.8,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T20:00:00+00:00",
+      "updated_ts": 946670400
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499996,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.6,
+      "cm_roi_30d": 4.6,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 498.0,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9900.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.7,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.22,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.22,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.22,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.22,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.22,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.97,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.44,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 247.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.85,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T21:00:00+00:00",
+      "updated_ts": 946674000
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499997,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.7,
+      "cm_roi_30d": 4.7,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 498.5,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9925.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.8,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.23,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.23,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.23,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.23,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.23,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.98,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.46,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 248.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.9,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T22:00:00+00:00",
+      "updated_ts": 946677600
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499998,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.8,
+      "cm_roi_30d": 4.8,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 499.0,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9950.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 99.9,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.24,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.24,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.24,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.24,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.24,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 6.99,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.48,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 249.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 49.95,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "1999-12-31T23:00:00+00:00",
+      "updated_ts": 946681200
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 499999,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 9.9,
+      "cm_roi_30d": 4.9,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 499.5,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 9975.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  },
+  {
+    "macro": {
+      "avg_funding_rate_pct": 0.002,
+      "binance_basis_pct_annual": 8.0,
+      "binance_funding_rate_pct": 0.003,
+      "btc_gold_ratio": 5.0,
+      "bybit_funding_rate_pct": 0.001,
+      "bybit_oi_usd_bn": 2.0,
+      "copper": {
+        "change_pct": -0.5,
+        "price": 3.0
+      },
+      "cpi_yoy_pct": 3.0,
+      "derivatives": {
+        "avg_funding_rate_pct": 0.002,
+        "oi_change_24h": 0.5
+      },
+      "dxy": 100.0,
+      "etf": {
+        "arkb": {
+          "change_pct": 0.25,
+          "price": 40.0
+        },
+        "bitb": {
+          "change_pct": 0.25,
+          "price": 50.0
+        },
+        "fbtc": {
+          "change_pct": 0.25,
+          "price": 20.0
+        },
+        "gbtc": {
+          "change_pct": 0.25,
+          "price": 30.0
+        },
+        "ibit": {
+          "change_pct": 0.25,
+          "price": 10.0
+        }
+      },
+      "fed_assets_trillions": 7.0,
+      "fed_funds_rate": 4.0,
+      "fomc": {},
+      "gold_usd": 2000.0,
+      "m2_yoy_pct": 2.5,
+      "oil": {
+        "change_pct": 0.25,
+        "price": 90.0
+      },
+      "real_yield_10y": 2.0,
+      "rrp_billions": 250.0,
+      "spx": {
+        "change_pct": 0.5,
+        "price": 3000.0
+      },
+      "stablecoin_total_mcap": 170000000000.0,
+      "stablecoin_total_vol": 30000000000.0,
+      "total_oi_usd_bn": 6.0,
+      "usdc_mcap": 40000000000.0,
+      "usdt_mcap": 130000000000.0,
+      "vix": {
+        "change_pct": 0.5,
+        "price": 22.0
+      },
+      "yield_10y": 4.0
+    },
+    "market": {
+      "btc_dominance_pct": 50.0,
+      "volume_24h_usd": 20000000000.0
+    },
+    "meta": {
+      "description": "Fictional development fixture; not observed market data.",
+      "generator": "scripts/generate_demo.py:v1",
+      "synthetic": true,
+      "updated_at": "2000-01-01T00:00:00+00:00",
+      "updated_ts": 946684800
+    },
+    "onchain": {
+      "bc_avg_fee_btc": 0.01,
+      "bc_avg_fee_usd": 2.0,
+      "bc_miners_revenue": 15000000.0,
+      "bc_tx_volume_usd": 4000000000.0,
+      "bc_utxo_count": 90000000,
+      "bc_wallet_users": 70000000,
+      "block_height": 500000,
+      "cm_active_addresses": 500000,
+      "cm_roi_1yr": 10.0,
+      "cm_roi_30d": 5.0,
+      "cm_tx_count": 400000,
+      "difficulty": 42000000000000.0,
+      "hashrate_1w_avg_eh_s": 500.0,
+      "mvrv": 1.7,
+      "nupl": 0.4,
+      "realized_price_usd": 7500.0
+    },
+    "price": {
+      "change_24h_pct": 2.5,
+      "usd": 10000.0
+    },
+    "sentiment": {
+      "current": {
+        "classification": "合成中性",
+        "value": 45
+      },
+      "news": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      },
+      "reddit": {
+        "net_sentiment": 0,
+        "source": "合成示例"
+      }
+    },
+    "status": {
+      "healthy": true,
+      "quality": "synthetic"
+    },
+    "supply": {
+      "annual_inflation_rate_pct": 1.0,
+      "daily_issuance_btc": 450.0,
+      "percent_mined": 80.0
+    }
+  }
+]
